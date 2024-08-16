@@ -29,24 +29,26 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="">
-              <td scope="row">1</td>
-              <td>Django with Python</td>
-              <td>Image.py</td>
-              <td>Books of frameworks about django</td>
-              <td>
-                <a name=""
-                   id=""
-                   class="btn btn-info d-inline-block"
-                   href="{% url 'edit' %}"
-                   role="button">Edit</a>
+            {% for book in books %}
+              <tr class="">
+                <td scope="row">{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.image }}</td>
+                <td>{{ book.description }}</td>
+                <td>
                   <a name=""
-                     id=""
-                     class="btn btn-danger d-inline-block"
-                     href="#"
-                     role="button">Delete</a>
-              </td>
-            </tr>
+                    id=""
+                    class="btn btn-info d-inline-block"
+                    href="{% url 'edit' %}"
+                    role="button">Edit</a>
+                    <a name=""
+                      id=""
+                      class="btn btn-danger d-inline-block"
+                      href="#"
+                      role="button">Delete</a>
+                </td>
+              </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
