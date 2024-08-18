@@ -33,7 +33,9 @@
               <tr class="">
                 <td scope="row">{{ book.id }}</td>
                 <td>{{ book.title }}</td>
-                <td>{{ book.image }}</td>
+                <td>
+                  <img src="{{ book.image.url }}" alt="" height="100"/>
+                </td>
                 <td>{{ book.description }}</td>
                 <td>
                   <a name=""
