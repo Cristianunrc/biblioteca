@@ -21,7 +21,6 @@
         <table class="table table-primary">
           <thead>
             <tr>
-              <th scope="col">Id</th>
               <th scope="col">Title</th>
               <th scope="col">Image</th>
               <th scope="col">Description</th>
@@ -31,7 +30,6 @@
           <tbody>
             {% for book in books %}
               <tr class="">
-                <td scope="row">{{ book.id }}</td>
                 <td>{{ book.title }}</td>
                 <td>
                   <img src="{{ book.image.url }}" alt="" height="100"/>
@@ -55,7 +53,6 @@
         </table>
       </div>
     </div>
-    <div class="card-footer text-muted"></div>
   </div>
   
 {% endblock %}
