@@ -13,4 +13,4 @@ class Book(models.Model):
     
     def delete(self, using=None, keep_parents=False):
         self.image.storage.delete(self.image.name)
-        super().delete
+        super().delete()
