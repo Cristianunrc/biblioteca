@@ -14,4 +14,5 @@ urlpatterns = [
     path("delete/<int:id>", views.delete_book, name="delete"),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
