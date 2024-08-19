@@ -11,6 +11,7 @@ urlpatterns = [
     path("books/", views.books, name="books"),
     path("books/add", views.create_book, name="add"),
     path("books/edit", views.edit_book, name="edit"),
+    path("delete/<int:id>", views.delete_book, name="delete"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
