@@ -3,6 +3,11 @@
   {% for f in form %}
     <div class="mb-3">
       <label for="" class="form-label">{{ f.label }}</label>
+      {% if f.field.widget.input_type == 'file' and f.value %}
+        <br>
+          <img src="/polls{{ f.value.url }}" width="100" alt=""/>
+        </br>
+      {% endif %}
       <input
         type="{{ f.field.widget.input_type }}"
         class="form-control"
@@ -10,7 +15,7 @@
         id=""
         aria-describedby="helpId"
         placeholder="{{ f.label }}"
-        value="{{ f.value | default:'' }}" required/>
+        value="{{ f.value | default:'' }}"/>
     </div>
     <div class="col-12 help-text"> {{ f.errors }} </div>
   {% endfor %}
@@ -19,5 +24,12 @@
     id=""
     class="btn btn-success"
     type="submit"
-    value="Edit"/>
+    value="Save"/>
+  <a
+    name=""
+    id=""
+    class="btn btn-secondary"
+    href="{% url 'books' %}"
+    role="button"
+    >Back</a>
 </form>
